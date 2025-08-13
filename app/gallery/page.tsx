@@ -9,6 +9,7 @@ import { X, ZoomIn, Calendar } from "lucide-react"
 export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<any>(null)
   const [selectedCategory, setSelectedCategory] = useState("All")
+  const [viewMode, setViewMode] = useState<"gallery" | "activity">("gallery") // NEW
 
   const galleryImages = [
     {
@@ -163,6 +164,26 @@ export default function GalleryPage() {
         </div>
       </section>
 
+      {/* View Mode Toggle */}
+      <section className="py-4 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
+        <div className="max-w-6xl mx-auto flex justify-center gap-4">
+          <Button
+            variant={viewMode === "gallery" ? "default" : "outline"}
+            onClick={() => setViewMode("gallery")}
+            className={viewMode === "gallery" ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white" : ""}
+          >
+            Gallery View
+          </Button>
+          <Button
+            variant={viewMode === "activity" ? "default" : "outline"}
+            onClick={() => setViewMode("activity")}
+            className={viewMode === "activity" ? "bg-gradient-to-r from-purple-500 to-blue-600 text-white" : ""}
+          >
+            Activity List View
+          </Button>
+        </div>
+      </section>
+
       {/* Category Filter */}
       <section className="py-8 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
         <div className="max-w-6xl mx-auto">
@@ -186,39 +207,65 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Gallery Grid */}
+      {/* Unified Section: Gallery or Activity List */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredImages.map((image) => (
-              <div
-                key={image.id}
-                className="group relative bg-slate-800/50 rounded-lg overflow-hidden border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 cursor-pointer"
-                onClick={() => setSelectedImage(image)}
-              >
-                <div className="aspect-square relative overflow-hidden">
+          {viewMode === "gallery" ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {filteredImages.map((image) => (
+                <div
+                  key={image.id}
+                  className="group relative bg-slate-800/50 rounded-lg overflow-hidden border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 cursor-pointer"
+                  onClick={() => setSelectedImage(image)}
+                >
+                  <div className="aspect-square relative overflow-hidden">
+                    <img
+                      src={image.src || "/placeholder.svg"}
+                      alt={image.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                      <ZoomIn className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                    <div className="absolute top-3 left-3">
+                      <Badge className={getCategoryColor(image.category)}>{image.category}</Badge>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-semibold text-white mb-2 line-clamp-2">{image.title}</h3>
+                    <div className="flex items-center text-xs text-gray-400">
+                      <Calendar className="h-3 w-3 mr-1" />
+                      {new Date(image.date).toLocaleDateString()}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="space-y-6">
+              {filteredImages.map((activity) => (
+                <div
+                  key={activity.id}
+                  className="bg-slate-800/50 rounded-lg border border-purple-500/20 p-6 flex flex-col sm:flex-row gap-4 items-start"
+                >
                   <img
-                    src={image.src || "/placeholder.svg"}
-                    alt={image.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    src={activity.src || "/placeholder.svg"}
+                    alt={activity.title}
+                    className="w-32 h-32 object-cover rounded-lg border border-purple-500/30"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
-                    <ZoomIn className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                  <div className="absolute top-3 left-3">
-                    <Badge className={getCategoryColor(image.category)}>{image.category}</Badge>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-white mb-2 line-clamp-2">{image.title}</h3>
-                  <div className="flex items-center text-xs text-gray-400">
-                    <Calendar className="h-3 w-3 mr-1" />
-                    {new Date(image.date).toLocaleDateString()}
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-2">{activity.title}</h3>
+                    <Badge className={getCategoryColor(activity.category)}>{activity.category}</Badge>
+                    <div className="flex items-center text-xs text-gray-400 mt-2 mb-2">
+                      <Calendar className="h-3 w-3 mr-1" />
+                      {new Date(activity.date).toLocaleDateString()}
+                    </div>
+                    <p className="text-gray-300">{activity.description}</p>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
