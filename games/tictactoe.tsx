@@ -1,29 +1,29 @@
 import React, { useState } from "react"
 
-const initialBoard = Array(9).fill(null)
+const initialBoard: (string | null)[] = Array(9).fill(null)
 
-function checkWinner(board: string[]) {
+function checkWinner(board: (string | null)[]) {
   const lines = [
-    [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
-    [0, 3, 6], [1, 4, 7], [2, 5, 8], // cols
-    [0, 4, 8], [2, 4, 6],            // diags
+    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+    [0, 4, 8], [2, 4, 6],
   ]
   for (let [a, b, c] of lines) {
     if (board[a] && board[a] === board[b] && board[a] === board[c]) {
       return board[a]
     }
   }
-  return board.every(Boolean) ? "Draw" : null
+  return board.every(cell => cell) ? "Draw" : null
 }
 
-function getRandomMove(board: string[]) {
-  const empty = board.map((v, i) => v ? null : i).filter(v => v !== null)
+function getRandomMove(board: (string | null)[]) {
+  const empty = board.map((v, i) => v ? null : i).filter(v => v !== null) as number[]
   if (empty.length === 0) return null
-  return empty[Math.floor(Math.random() * empty.length)] as number
+  return empty[Math.floor(Math.random() * empty.length)]
 }
 
 export default function TicTacToeAI() {
-  const [board, setBoard] = useState(initialBoard)
+  const [board, setBoard] = useState<(string | null)[]>(initialBoard)
   const [isXNext, setIsXNext] = useState(true)
   const winner = checkWinner(board)
 
@@ -34,12 +34,12 @@ export default function TicTacToeAI() {
     setBoard(newBoard)
     setIsXNext(false)
 
-    // AI move after short delay
     setTimeout(() => {
       const aiMove = getRandomMove(newBoard)
       if (aiMove !== null && !checkWinner(newBoard)) {
-        newBoard[aiMove] = "O"
-        setBoard([...newBoard])
+        const aiBoard = newBoard.slice()
+        aiBoard[aiMove] = "O"
+        setBoard(aiBoard)
         setIsXNext(true)
       }
     }, 500)
