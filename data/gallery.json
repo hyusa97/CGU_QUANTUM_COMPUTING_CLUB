@@ -1,0 +1,40 @@
+{
+  "images": [
+    {
+      "id": "1",
+      "title": "Quantum Workshop 2024",
+      "description": "Students learning quantum programming with Qiskit",
+      "url": "/placeholder.svg?height=300&width=400",
+      "category": "workshops",
+      "date": "2024-01-20",
+      "event": "Quantum Computing Workshop"
+    },
+    {
+      "id": "2",
+      "title": "IBM Partnership Announcement",
+      "description": "Signing ceremony with IBM Quantum Network representatives",
+      "url": "/placeholder.svg?height=300&width=400",
+      "category": "events",
+      "date": "2024-01-18",
+      "event": "IBM Partnership"
+    },
+    {
+      "id": "3",
+      "title": "National Competition Winners",
+      "description": "QCC team celebrating their victory at the national competition",
+      "url": "/placeholder.svg?height=300&width=400",
+      "category": "achievements",
+      "date": "2024-01-25",
+      "event": "National Quantum Challenge"
+    },
+    {
+      "id": "4",
+      "title": "Lab Session",
+      "description": "Students working on quantum circuit design",
+      "url": "/placeholder.svg?height=300&width=400",
+      "category": "workshops",
+      "date": "2024-01-22",
+      "event": "Circuit Design Workshop"
+    }
+  ]
+}

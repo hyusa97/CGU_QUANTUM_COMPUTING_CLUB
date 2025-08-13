@@ -1,0 +1,46 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "title": "Quantum Computing Workshop",
+      "description": "Introduction to quantum computing principles and IBM Qiskit programming",
+      "date": "2024-02-15",
+      "time": "14:00",
+      "location": "Computer Science Lab, Block A",
+      "type": "workshop",
+      "status": "upcoming",
+      "registrationLink": "https://forms.google.com/quantum-workshop",
+      "maxParticipants": 30,
+      "currentParticipants": 18,
+      "image": "/placeholder.svg?height=200&width=300"
+    },
+    {
+      "id": "2",
+      "title": "Guest Lecture: Quantum Cryptography",
+      "description": "Expert talk on quantum cryptography and its applications in cybersecurity",
+      "date": "2024-02-22",
+      "time": "16:00",
+      "location": "Main Auditorium",
+      "type": "lecture",
+      "status": "upcoming",
+      "registrationLink": "https://forms.google.com/quantum-crypto",
+      "maxParticipants": 100,
+      "currentParticipants": 45,
+      "image": "/placeholder.svg?height=200&width=300"
+    },
+    {
+      "id": "3",
+      "title": "Quantum Algorithm Competition",
+      "description": "Team-based competition to solve quantum computing challenges",
+      "date": "2024-01-20",
+      "time": "10:00",
+      "location": "Computer Science Lab",
+      "type": "competition",
+      "status": "completed",
+      "registrationLink": "",
+      "maxParticipants": 24,
+      "currentParticipants": 24,
+      "image": "/placeholder.svg?height=200&width=300"
+    }
+  ]
+}

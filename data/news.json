@@ -1,0 +1,37 @@
+{
+  "news": [
+    {
+      "id": "1",
+      "title": "QCC Wins National Quantum Computing Challenge",
+      "summary": "Our team secured first place in the National Quantum Computing Challenge with their innovative quantum machine learning algorithm.",
+      "content": "The Quantum Computing Club of CV Raman Global University has achieved a remarkable milestone by winning the National Quantum Computing Challenge 2024. The team, led by senior students, developed an innovative quantum machine learning algorithm that outperformed solutions from over 50 universities across the country.",
+      "date": "2024-01-25",
+      "category": "achievement",
+      "author": "QCC Team",
+      "image": "/placeholder.svg?height=200&width=300",
+      "featured": true
+    },
+    {
+      "id": "2",
+      "title": "New Partnership with IBM Quantum Network",
+      "summary": "QCC announces partnership with IBM Quantum Network, providing students access to real quantum computers.",
+      "content": "We are excited to announce our partnership with the IBM Quantum Network, which will provide our students and researchers with access to IBM's quantum computers and advanced quantum computing resources. This partnership opens new opportunities for hands-on learning and cutting-edge research.",
+      "date": "2024-01-18",
+      "category": "announcement",
+      "author": "Dr. Sarah Johnson",
+      "image": "/placeholder.svg?height=200&width=300",
+      "featured": true
+    },
+    {
+      "id": "3",
+      "title": "Quantum Computing Workshop Series Begins",
+      "summary": "Monthly workshop series covering quantum algorithms, programming, and applications starts this February.",
+      "content": "Our comprehensive quantum computing workshop series is designed to take participants from basic concepts to advanced quantum programming. Each month will focus on different aspects of quantum computing, including quantum algorithms, quantum machine learning, and quantum cryptography.",
+      "date": "2024-01-15",
+      "category": "announcement",
+      "author": "QCC Team",
+      "image": "/placeholder.svg?height=200&width=300",
+      "featured": false
+    }
+  ]
+}
