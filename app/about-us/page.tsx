@@ -12,8 +12,8 @@ export default function AboutUsPage() {
       image: "/professional-student-portrait.png",
     },
     {
-      name: "Dr. Sarah Chen",
-      role: "Faculty Advisor",
+      name: "Ashutosh Kumar",
+      role: "Vice President",
       description: "Professor of Physics specializing in quantum mechanics and computation.",
       image: "/professor-portrait.png",
     },
