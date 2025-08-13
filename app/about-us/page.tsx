@@ -18,7 +18,7 @@ export default function AboutUsPage() {
       image: "/professor-portrait.png",
     },
     {
-      name: "Alex Kumar",
+      name: "Archita Bhalotia",
       role: "Vice President",
       description: "Expert in quantum programming languages and Qiskit development.",
       image: "/student-tech-portrait.png",
