@@ -24,9 +24,11 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg">
-              <Atom className="h-6 w-6 text-white" />
-            </div>
+            <img
+              src="/logo.png" // <-- Make sure this matches your screenshot filename
+              alt="Quantum Club Logo"
+              className="h-10 w-10 rounded-lg shadow-lg bg-white object-contain"
+            />
             <span className="font-bold text-xl bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Quantum Club
             </span>

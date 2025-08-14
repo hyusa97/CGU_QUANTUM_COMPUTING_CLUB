@@ -24,7 +24,7 @@ export default function AboutUsPage() {
       image: "/student-tech-portrait.png",
     },
     {
-      name: "Maya Patel",
+      name: "Ayush kumar",
       role: "Secretary",
       description: "Focuses on quantum cryptography and security applications.",
       image: "/diverse-female-student.png",

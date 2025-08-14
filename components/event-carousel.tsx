@@ -36,6 +36,19 @@ export function EventCarousel() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
+        {/* Spline 3D Embed */}
+        <div className="mb-12 flex justify-center">
+          <iframe
+            src="https://my.spline.design/claritystream-OOSYs4Lt8c1v9liiyPGptVmD/"
+            frameBorder="0"
+            width="1000"
+            height="500"
+            allowFullScreen
+            style={{ borderRadius: '16px', boxShadow: '0 4px 24px #0003', width: '100%', maxWidth: '1000px', height: '500px' }}
+            title="Spline 3D"
+          />
+        </div>
+
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-white mb-4">Upcoming Events</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
