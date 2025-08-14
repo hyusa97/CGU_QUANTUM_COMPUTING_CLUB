@@ -42,13 +42,17 @@ export default function TicTacToeAI() {
     if (!quantumMode) {
       // Normal AI move
       setTimeout(() => {
-        const aiMove = getRandomMove(newBoard)
-        if (aiMove !== null && !checkWinner(newBoard)) {
-          const aiBoard = [...newBoard]
-          aiBoard[aiMove] = "O"
-          setBoard(aiBoard)
+        if (!checkWinner(newBoard)) {
+          const aiMove = getRandomMove(newBoard)
+          if (aiMove !== null) {
+            const aiBoard = [...newBoard]
+            aiBoard[aiMove] = "O"
+            setBoard(aiBoard)
+          }
         }
-        setIsXNext(true) // Back to player's turn
+        if (!checkWinner(newBoard)) {
+          setIsXNext(true) // Back to player's turn
+        }
       }, 500)
     } else {
       // Quantum AI move
@@ -78,7 +82,10 @@ export default function TicTacToeAI() {
     setBoard(collapsedBoard)
     setQuantumMoves([])
     setWaitingForMeasure(false)
-    setIsXNext(true) // Player's turn resumes
+
+    if (!checkWinner(collapsedBoard)) {
+      setIsXNext(true) // Player's turn resumes
+    }
   }
 
   function reset() {
@@ -101,7 +108,7 @@ export default function TicTacToeAI() {
             type="checkbox"
             checked={quantumMode}
             onChange={(e) => setQuantumMode(e.target.checked)}
-          /> Enable Quantum Move
+          /> Ennable Quantum Move
         </label>
       </div>
 
