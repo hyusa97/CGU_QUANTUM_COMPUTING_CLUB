@@ -39,12 +39,12 @@ export function EventCarousel() {
         {/* Spline 3D Embed */}
         <div className="mb-12 flex justify-center">
           <iframe
-            src="https://prod.spline.design/GenoiI1k04-oZwzm/scene.splinecode" // <-- Replace with your Spline URL
+            src="https://my.spline.design/claritystream-OOSYs4Lt8c1v9liiyPGptVmD/"
             frameBorder="0"
-            width="600"
-            height="400"
+            width="1000"
+            height="500"
             allowFullScreen
-            style={{ borderRadius: '16px', boxShadow: '0 4px 24px #0003' }}
+            style={{ borderRadius: '16px', boxShadow: '0 4px 24px #0003', width: '100%', maxWidth: '1000px', height: '500px' }}
             title="Spline 3D"
           />
         </div>
