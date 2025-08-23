@@ -81,7 +81,7 @@ export default function ContactUsPage() {
       icon: MessageCircle,
       title: "WhatsApp",
       value: "Join our group",
-      href: "https://chat.whatsapp.com/GSQLbWMXLdVFpiKiB6V3HX",
+      href: "",
       color: "text-green-400",
     },
   ]
