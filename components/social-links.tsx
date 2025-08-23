@@ -17,7 +17,7 @@ export function SocialLinks() {
     },
     {
       name: "WhatsApp",
-      href: "https://wa.me/919748338780",
+      href: "https://chat.whatsapp.com/GSQLbWMXLdVFpiKiB6V3HX",
       icon: MessageCircle,
       color: "from-green-500 to-green-600",
     },
